@@ -156,6 +156,94 @@
       color: var(--brown);
     }
 
+    .navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: var(--cream-card);
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      padding: 0;
+      transition: var(--transition);
+      z-index: 910;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background-color: var(--brown);
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(3.5px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      transform: translateY(-3.5px) rotate(-45deg);
+    }
+
+    .mobile-menu-drawer {
+      display: flex;
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 1.25rem;
+      right: 1.25rem;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(78, 57, 46, 0.14);
+      border-radius: 1.25rem;
+      padding: 1.25rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.16);
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 899;
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .mobile-menu-drawer.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .mobile-menu-links {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-link {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      padding: 10px 14px;
+      border-radius: 8px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .mobile-link:hover, .mobile-link:active {
+      background-color: var(--cream-bg);
+      color: var(--brown);
+    }
+
     /* Signature Siwa Capital Pill Button with 45-degree Arrow */
     .button {
       display: inline-flex;
@@ -1070,37 +1158,437 @@
       color: rgba(255, 255, 255, 0.5);
     }
 
-    /* Responsive */
+    /* Responsive Design System (Optimized for Mobile, Tablet & Desktop) */
+    .button {
+      max-width: 100%;
+    }
+    .button > div:first-child {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
     @media (max-width: 1024px) {
       .hero_wrap { flex-direction: column; align-items: flex-start; }
       .hero_right-wrap { align-items: flex-start; text-align: left; }
-      .family_wrap { grid-template-columns: 1fr; }
+      .family_wrap { grid-template-columns: 1fr; gap: 3.5rem; }
       .header-aligned { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .portfolio-slide-card { grid-template-columns: 1fr; }
       .thought-banner-card { grid-template-columns: 1fr; }
       .cases-grid { grid-template-columns: 1fr; }
       .certs-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer_grid { grid-template-columns: 1fr; }
+      .footer_grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    @media (max-width: 900px) {
+      .navbar-links-desktop { display: none; }
+      .menu-toggle { display: flex; }
+      .navbar-wrapper { width: calc(100% - 2.5rem); padding: 0.6rem 1.25rem; }
     }
 
     @media (max-width: 768px) {
-      .navbar-links-desktop { display: none; }
-      .navbar-wrapper { width: calc(100% - 2rem); padding: 0.6rem 1.2rem; }
-      .hero_h { font-size: 2.5rem; }
-      .key-cards-grid { grid-template-columns: 1fr; }
-      .certs-grid { grid-template-columns: 1fr; }
-      .footer_bottom { flex-direction: column; gap: 12px; text-align: center; }
+      body {
+        font-size: 1rem;
+      }
+      .container {
+        padding: 0 1.25rem;
+      }
+      .section_family,
+      .section_aligned,
+      .section_growing,
+      .section_key,
+      .section_cases,
+      .section_thought,
+      .section_certs,
+      .section_cta {
+        padding: 4.25rem 0;
+      }
+      .navbar {
+        padding-top: 1rem;
+      }
+      .navbar-wrapper {
+        width: calc(100% - 1.5rem);
+        padding: 0.5rem 1rem;
+      }
+      .navbar-logo-avatar {
+        width: 32px;
+        height: 32px;
+      }
+      .navbar-logo-text {
+        font-size: 0.88rem;
+        letter-spacing: 0.02em;
+      }
+      .navbar-cta-desktop {
+        display: none;
+      }
+      .section_hero {
+        height: auto;
+        min-height: 100svh;
+        padding-top: 6.25rem;
+        padding-bottom: 2.75rem;
+        display: flex;
+        align-items: center;
+      }
+      .hero_h-wrap {
+        max-width: 100%;
+      }
+      .hero_tag_badge {
+        font-size: 0.68rem;
+        letter-spacing: 0.05em;
+        padding: 5px 12px;
+        margin-bottom: 14px;
+        white-space: normal;
+        line-height: 1.4;
+        display: inline-block;
+      }
+      .hero_h {
+        font-size: 2.15rem;
+        line-height: 1.18;
+        margin-bottom: 14px;
+        letter-spacing: -0.02em;
+      }
+      .p-hero {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+      .btn-flex {
+        gap: 12px;
+      }
+      .hero_right-wrap {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding-top: 1.5rem;
+        margin-top: 0.5rem;
+        gap: 1rem;
+      }
+      .hero_assets {
+        align-items: flex-start;
+      }
+      .hero_cifra-anime {
+        font-size: 2.75rem;
+      }
+      .hero_assets-label {
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+      }
+      .btn-scroll {
+        padding: 6px 14px;
+        font-size: 0.76rem;
+      }
+      .family_left img {
+        height: 320px;
+      }
+      .family_funds {
+        padding: 20px;
+      }
+      .family_cifra-flex {
+        gap: 20px;
+      }
+      .family_cifra-val {
+        font-size: 1.8rem;
+      }
+      .family_header h3 {
+        font-size: 1.9rem;
+        line-height: 1.2;
+        margin-bottom: 14px;
+      }
+      .family_header p {
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+      .family_cifra-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding-top: 22px;
+      }
+      .family_item-num {
+        font-size: 2rem;
+      }
+      .section_line {
+        padding: 1.25rem 0;
+      }
+      .ticker-pill {
+        font-size: 0.8rem;
+        margin-right: 32px;
+        gap: 12px;
+      }
+      .header-left h2 {
+        font-size: 2rem;
+        line-height: 1.18;
+      }
+      .header-filter {
+        font-size: 0.98rem;
+      }
+      .aligned_item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 1.75rem 0.75rem;
+      }
+      .number-blue {
+        width: auto;
+        font-size: 1.2rem;
+      }
+      .aligned_p {
+        font-size: 1.2rem;
+        line-height: 1.3;
+      }
+      .aligned_detail {
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+      .aligned_item:hover {
+        padding-left: 1.25rem;
+      }
+      .growing-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+      }
+      .growing-header h2 {
+        font-size: 2rem;
+        line-height: 1.18;
+      }
+      .portfolio-grid {
+        gap: 2rem;
+      }
+      .portfolio-left-panel {
+        padding: 2.25rem 1.5rem;
+      }
+      .portfolio-category {
+        font-size: 0.72rem;
+      }
+      .portfolio-name {
+        font-size: 1.75rem;
+        margin-bottom: 12px;
+      }
+      .portfolio-desc {
+        font-size: 0.98rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .portfolio-tags {
+        margin-bottom: 22px;
+        gap: 6px;
+      }
+      .tag-badge-pill {
+        font-size: 0.72rem;
+        padding: 4px 10px;
+      }
+      .portfolio-left-panel .button {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+      .potfolio-right-panel {
+        padding: 2.5rem 1.5rem;
+      }
+      .visual-motif {
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+      .visual-motif-title {
+        font-size: 1.15rem;
+      }
+      .visual-motif-sub {
+        font-size: 0.75rem;
+      }
+      .key-header-center h2 {
+        font-size: 2rem;
+      }
+      .key-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .key-card-box {
+        padding: 2rem 1.5rem;
+      }
+      .key-card-box p {
+        font-size: 1.05rem;
+      }
+      .cases-grid {
+        margin-top: 2.5rem;
+        gap: 20px;
+      }
+      .case-card {
+        padding: 2rem 1.5rem;
+      }
+      .case-title {
+        font-size: 1.3rem;
+      }
+      .case-desc {
+        font-size: 0.95rem;
+      }
+      .case-points li {
+        font-size: 0.88rem;
+      }
+      .thought-banner-card {
+        margin-top: 2.5rem;
+      }
+      .thought-content {
+        padding: 2.25rem 1.5rem;
+      }
+      .thought-title {
+        font-size: 1.5rem;
+        line-height: 1.3;
+        margin-bottom: 14px;
+      }
+      .thought-p {
+        font-size: 0.96rem;
+        line-height: 1.65;
+        margin-bottom: 24px;
+      }
+      .thought-visual img {
+        height: 260px;
+        width: 100%;
+      }
+      .thought-content .button {
+        width: 100%;
+        justify-content: center;
+      }
+      .certs-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 2.5rem;
+      }
+      .cert-item-card {
+        padding: 18px 16px;
+      }
+      .cta_wrap {
+        padding: 3.5rem 1.5rem;
+        border-radius: 1.25rem;
+      }
+      .cta_wrap h2 {
+        font-size: 2.2rem;
+      }
+      .cta_wrap p {
+        font-size: 1rem;
+        margin-bottom: 26px;
+      }
+      .cta-actions {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .cta-actions .button {
+        width: 100%;
+        justify-content: center;
+      }
+      .footer {
+        padding: 3.5rem 0 2.5rem;
+      }
+      .footer_brand h3 {
+        font-size: 1.5rem;
+      }
+      .footer_brand p {
+        font-size: 0.95rem;
+        line-height: 1.65;
+        margin-bottom: 22px;
+      }
+      .footer-btn-row {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .footer-btn-row .button {
+        width: 100%;
+        justify-content: center;
+      }
+      .footer_bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1rem;
+      }
+      .section_family,
+      .section_aligned,
+      .section_growing,
+      .section_key,
+      .section_cases,
+      .section_thought,
+      .section_certs,
+      .section_cta {
+        padding: 3.25rem 0;
+      }
+      .navbar-wrapper {
+        width: calc(100% - 1rem);
+        padding: 0.45rem 0.85rem;
+      }
+      .navbar-logo-avatar {
+        width: 30px;
+        height: 30px;
+      }
+      .navbar-logo-text {
+        font-size: 0.82rem;
+      }
+      .hero_h {
+        font-size: 1.85rem;
+        line-height: 1.2;
+      }
+      .p-hero {
+        font-size: 0.94rem;
+        line-height: 1.55;
+      }
+      .btn-flex {
+        flex-direction: column;
+        width: 100%;
+      }
+      .btn-flex .button {
+        width: 100%;
+        justify-content: center;
+      }
+      .hero_cifra-anime {
+        font-size: 2.3rem;
+      }
+      .family_cifra-flex {
+        grid-template-columns: 1fr;
+      }
+      .family_header h3 {
+        font-size: 1.65rem;
+      }
+      .header-left h2,
+      .growing-header h2,
+      .key-header-center h2,
+      .cta_wrap h2 {
+        font-size: 1.7rem;
+      }
+      .portfolio-left-panel {
+        padding: 1.75rem 1.15rem;
+      }
+      .portfolio-name {
+        font-size: 1.45rem;
+      }
+      .portfolio-left-panel .button {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.82rem;
+      }
+      .thought-title {
+        font-size: 1.25rem;
+      }
+      .thought-content .button {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Minimalist Floating Navigation (Exact Siwa Capital Navbar) -->
+  <!-- Minimalist Floating Navigation (Exact Siwa Capital Navbar with Responsive Mobile Drawer) -->
   <div class="navbar">
     <div class="navbar-wrapper">
       <a href="#" class="navbar-logo-flex">
         <img src="profile.jpg" alt="RICHARD KWAME APPIAH" class="navbar-logo-avatar">
-        <span>RICHARD KWAME APPIAH</span>
+        <span class="navbar-logo-text">RICHARD KWAME APPIAH</span>
       </a>
       <div class="navbar-links-desktop">
         <a href="#about" class="navbar-link">About</a>
@@ -1110,15 +1598,45 @@
         <a href="#research" class="navbar-link">Research</a>
         <a href="#credentials" class="navbar-link">Certifications</a>
       </div>
-      <a href="mailto:Richard.k.appiah.ca@gmail.com" class="button button-mb-brown btn-arrow">
-        <div>Get in Touch</div>
-        <div class="icon-arrow">
-          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
-            <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2.33301 8H13.553" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </a>
+      <div class="navbar-actions">
+        <a href="mailto:Richard.k.appiah.ca@gmail.com" class="button button-mb-brown btn-arrow navbar-cta-desktop">
+          <div>Get in Touch</div>
+          <div class="icon-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+              <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2.33301 8H13.553" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-menu-drawer" id="mobileMenu">
+      <div class="mobile-menu-links">
+        <a href="#about" class="mobile-link">About Leadership</a>
+        <a href="#pillars" class="mobile-link">Strategic Pillars</a>
+        <a href="#ventures" class="mobile-link">Commercial Ventures</a>
+        <a href="#case-studies" class="mobile-link">Audit Case Studies</a>
+        <a href="#research" class="mobile-link">Research & Publications</a>
+        <a href="#credentials" class="mobile-link">Certifications</a>
+        <a href="resume.html" target="_blank" class="mobile-link" style="color: var(--brown); font-weight: 800;">View Printable Resume &rarr;</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="mailto:Richard.k.appiah.ca@gmail.com" class="button button-mb-brown btn-arrow" style="width: 100%; justify-content: center;">
+          <div>Get in Touch</div>
+          <div class="icon-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2.33301 8H13.553" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -1717,6 +2235,41 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const isOpen = mobileMenu.classList.toggle('open');
+          menuToggle.classList.toggle('active', isOpen);
+          menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        // Close on link click
+        mobileLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            mobileMenu.classList.remove('open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+            mobileMenu.classList.remove('open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    })();
+  </script>
 
 </body>
 </html>
