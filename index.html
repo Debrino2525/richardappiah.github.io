@@ -7,26 +7,39 @@
   <meta name="description" content="Executive portfolio of RICHARD KWAME APPIAH - Lead Technology / IT Auditor, Cybersecurity Governance Specialist, and Founder of Globitech Cyber Solutions.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
+    /* Exact Color Palette & Design System from Siwa Capital (siwacap.com) */
     :root {
-      --bg-dark: #070a0e;
-      --bg-card: rgba(12, 18, 26, 0.72);
-      --bg-card-hover: rgba(16, 24, 36, 0.88);
-      --glass-border: rgba(255, 255, 255, 0.09);
-      --glass-border-hover: rgba(34, 196, 214, 0.45);
-      --primary: #22c4d6;
-      --primary-hover: #38bdf8;
-      --sand: #f1e8d9;
-      --sand-muted: #d4b28c;
-      --text-white: #ffffff;
-      --text-main: #f1f5f9;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
-      --radius-pill: 100px;
-      --radius-card: 20px;
-      --radius-sm: 12px;
+      --black: #0c0e12;
+      --true-black: #000000;
+      --white: #ffffff;
+      --hover-wh: #d6d6d6;
+      --sand: #c29e77;
+      --sand-light: #d4b290;
+      --sand-accent: #e2b991;
+      --grey: #787878;
+      --grey-light: #ebe8e2;
+      --cream: #f1e8d9;
+      --cream-bg: #fbfaf8;
+      --cream-card: #f5f2eb;
+      --brown: #4e392e;
+      --hover-grey: #505050;
+      --hover-brown: #3f2c22;
+      --hover-sand: #9a764f;
+      --hover-cream: #c9c0b1;
+      --transparent: transparent;
+      --blue: #97a8bb;
+      --blue-accent: #6b829c;
+      --beige: #ababab;
+      --text-dark: #191614;
+      --text-body: #45403c;
+      --text-muted: #736d67;
+      --border-light: rgba(78, 57, 46, 0.12);
+      --radius-pill: 31.25rem;
+      --radius-card: 1.25rem;
+      --radius-lg: 1.75rem;
       --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -39,57 +52,27 @@
 
     html {
       scroll-behavior: smooth;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--white);
+      color: var(--text-dark);
+      font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
     }
 
     body {
       overflow-x: hidden;
       line-height: 1.6;
-      background-color: var(--bg-dark);
-      position: relative;
+      background-color: var(--white);
+      font-size: 1.05rem;
     }
 
     ::selection {
-      background: rgba(34, 196, 214, 0.3);
-      color: #ffffff;
-    }
-
-    /* Cinematic Video & Atmosphere Background */
-    .hero-video-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -2;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .hero-video-container video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.95) contrast(1.15) saturate(1.1);
-    }
-
-    .hero-video-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 45% 30%, rgba(7, 10, 14, 0.35) 0%, rgba(7, 10, 14, 0.82) 100%),
-                  linear-gradient(180deg, rgba(7, 10, 14, 0.3) 0%, rgba(7, 10, 14, 0.92) 100%);
-      z-index: 1;
+      background: var(--sand);
+      color: var(--white);
     }
 
     h1, h2, h3, h4 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       letter-spacing: -0.025em;
-      color: var(--text-white);
+      color: var(--text-dark);
       font-weight: 700;
     }
 
@@ -106,592 +89,755 @@
     .container {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 0 28px;
+      padding: 0 2.5rem;
       position: relative;
     }
 
-    /* Minimalist Floating Navigation (Siwa Capital Style) */
-    nav {
-      position: sticky;
-      top: 18px;
-      z-index: 100;
-      margin: 0 auto;
-      max-width: 1240px;
-      padding: 0 28px;
+    /* Fixed Minimalist Navbar (Exact Siwa Capital Structure) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 900;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      transition: var(--transition);
     }
 
-    .nav-inner {
-      background: rgba(10, 15, 22, 0.76);
-      backdrop-filter: blur(24px) saturate(180%);
-      -webkit-backdrop-filter: blur(24px) saturate(180%);
-      border: 1px solid var(--glass-border);
+    .navbar-wrapper {
+      width: calc(100% - 5rem);
+      max-width: 1240px;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(0, 0, 0, 0.08);
       border-radius: var(--radius-pill);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 68px;
-      padding: 0 22px;
-      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      transition: var(--transition);
+      padding: 0.75rem 1.75rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     }
 
-    .nav-inner:hover {
-      border-color: rgba(34, 196, 214, 0.4);
-      box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.75), 0 0 24px rgba(34, 196, 214, 0.18);
-    }
-
-    .logo-brand {
+    .navbar-logo-flex {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
       font-size: 1.05rem;
-      font-weight: 700;
       letter-spacing: 0.04em;
-      color: var(--text-white);
+      color: var(--text-dark);
     }
 
-    .logo-avatar {
-      width: 42px;
-      height: 42px;
+    .navbar-logo-avatar {
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--primary);
-      box-shadow: 0 0 14px rgba(34, 196, 214, 0.45);
+      border: 2px solid var(--brown);
     }
 
-    .nav-links {
+    .navbar-links-desktop {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 2.2rem;
     }
 
-    .nav-link {
+    .navbar-link {
       font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      position: relative;
+      font-weight: 600;
+      color: var(--text-body);
+      transition: color 0.25s ease;
     }
 
-    .nav-link:hover {
-      color: var(--text-white);
+    .navbar-link:hover {
+      color: var(--brown);
     }
 
-    /* Buttons with 45-degree Angled Arrow (Signature Siwa Capital style) */
-    .btn-pill {
+    /* Signature Siwa Capital Pill Button with 45-degree Arrow */
+    .button {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 11px 22px;
+      gap: 0.62rem;
       border-radius: var(--radius-pill);
+      padding: 0.75rem 1.25rem;
       font-size: 0.88rem;
       font-weight: 600;
-      font-family: 'Inter', sans-serif;
+      line-height: 1.3;
+      text-align: center;
       cursor: pointer;
       transition: var(--transition);
-      text-decoration: none;
       white-space: nowrap;
+      border: 1px solid transparent;
     }
 
-    .btn-primary {
-      background: #ffffff;
-      color: #070a0e;
-      border: 1px solid #ffffff;
+    .button-mb-brown {
+      background-color: var(--brown);
+      color: var(--white);
+      border-color: var(--brown);
     }
 
-    .btn-primary:hover {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #070a0e;
-      box-shadow: 0 0 20px rgba(34, 196, 214, 0.55);
+    .button-mb-brown:hover {
+      background-color: var(--hover-brown);
+      border-color: var(--hover-brown);
+      color: var(--white);
     }
 
-    .btn-glass {
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      color: var(--text-white);
+    .button-mb-sand {
+      background-color: var(--cream);
+      color: var(--brown);
+      border-color: rgba(78, 57, 46, 0.15);
     }
 
-    .btn-glass:hover {
-      background: rgba(255, 255, 255, 0.14);
-      border-color: var(--primary);
-      color: var(--primary);
-      box-shadow: 0 0 20px rgba(34, 196, 214, 0.3);
+    .button-mb-sand:hover {
+      background-color: var(--sand);
+      color: var(--white);
     }
 
-    .icon-arrow {
-      display: inline-flex;
+    .button.is-glass {
+      background-color: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: var(--white);
+    }
+
+    .button.is-glass:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: var(--white);
+    }
+
+    .button.btn-arrow .icon-arrow {
+      display: flex;
       align-items: center;
       justify-content: center;
+      width: 0.85rem;
+      height: 0.85rem;
       transition: transform 0.25s ease;
     }
 
-    .btn-pill:hover .icon-arrow {
+    .button.btn-arrow:hover .icon-arrow {
       transform: translate(2.5px, -2.5px);
     }
 
-    /* Hero Section (Split Layout) */
-    .section-hero {
-      min-height: 88vh;
-      display: flex;
-      align-items: center;
-      padding: 70px 0 60px;
+    /* Section Hero (Exact Siwa Capital Layout & Vibe) */
+    .section_hero {
+      height: 100svh;
+      min-height: 640px;
+      padding-top: 5rem;
+      padding-bottom: 4rem;
       position: relative;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .tag-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 7px 18px;
-      background: rgba(34, 196, 214, 0.08);
-      border: 1px solid rgba(34, 196, 214, 0.32);
-      border-radius: var(--radius-pill);
-      font-size: 0.76rem;
-      letter-spacing: 0.08em;
-      color: var(--primary);
-      font-weight: 700;
-      margin-bottom: 24px;
-    }
-
-    .pulse-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--primary);
-      box-shadow: 0 0 10px var(--primary);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
-    }
-
-    .hero-title {
-      font-size: 3.4rem;
-      line-height: 1.12;
-      font-weight: 800;
-      margin-bottom: 24px;
-      letter-spacing: -0.03em;
-    }
-
-    .hero-title span {
-      background: linear-gradient(135deg, #ffffff 40%, #22c4d6 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-desc {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 38px;
-      max-width: 650px;
-    }
-
-    .hero-actions {
+      overflow: hidden;
       display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+      align-items: flex-end;
     }
 
-    /* Hero Right Metrics Box */
-    .hero-stats-panel {
-      background: var(--bg-card);
-      backdrop-filter: blur(28px) saturate(180%);
-      -webkit-backdrop-filter: blur(28px) saturate(180%);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-card);
-      padding: 40px 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-      box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.7);
-    }
-
-    .stat-row {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .stat-row:not(:last-child)::after {
-      content: '';
+    .vid-bg {
       position: absolute;
-      bottom: -16px;
-      left: 0;
+      inset: 0%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .hero-img-bg {
       width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), transparent);
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.88) contrast(1.15);
+      transform: scale(1.03);
+      transition: transform 12s ease-out;
     }
 
-    .stat-number {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 800;
-      line-height: 1;
-      color: #ffffff;
+    .section_hero:hover .hero-img-bg {
+      transform: scale(1.07);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0%;
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.78) 100%);
+      z-index: 1;
+    }
+
+    .hero_wrap {
+      z-index: 2;
+      width: 100%;
+      color: var(--white);
       display: flex;
-      align-items: baseline;
-      gap: 4px;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 3rem;
+      position: relative;
     }
 
-    .stat-number span {
-      color: var(--primary);
-      font-size: 2rem;
+    .hero_h-wrap {
+      max-width: 58rem;
     }
 
-    .stat-label {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      margin-top: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 600;
-    }
-
-    .scroll-explore {
+    .hero_tag_badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-pill);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      font-weight: 700;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .hero_h {
+      font-size: 3.4rem;
+      line-height: 1.12;
+      font-weight: 800;
+      margin-bottom: 18px;
+      color: var(--white);
+      letter-spacing: -0.03em;
+    }
+
+    .p-hero {
+      font-size: 1.15rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 44rem;
+      margin-bottom: 28px;
+    }
+
+    .btn-flex {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero_right-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 24px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    .hero_assets {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      color: var(--white);
+    }
+
+    .hero_cifra-anime {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      font-size: 3.6rem;
+      font-weight: 800;
+      line-height: 1;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--white);
+    }
+
+    .hero_assets-label {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.78);
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      margin-top: 8px;
-      align-self: flex-start;
-      transition: var(--transition);
+      margin-top: 6px;
+      font-weight: 600;
     }
 
-    .scroll-explore:hover {
-      color: var(--primary);
-    }
-
-    /* Infinite Institutional Marquee Ticker (Siwa Capital Style) */
-    .section-ticker {
-      padding: 24px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(7, 10, 14, 0.88);
-      backdrop-filter: blur(20px);
-      overflow: hidden;
-      white-space: nowrap;
-      position: relative;
-      z-index: 10;
-    }
-
-    .ticker-track {
+    .btn-scroll {
       display: inline-flex;
       align-items: center;
-      gap: 48px;
-      animation: tickerScroll 36s linear infinite;
+      gap: 8px;
+      color: var(--white);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    @keyframes tickerScroll {
+    .btn-scroll:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    /* Section Family / About (Exact Siwa Capital Style with Cream Background) */
+    .section_family {
+      background-color: var(--cream-bg);
+      padding: 6.5rem 0;
+      position: relative;
+    }
+
+    .family_wrap {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .family_left {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .family_left img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius-card);
+      box-shadow: 0 16px 40px rgba(78, 57, 46, 0.1);
+    }
+
+    .family_funds {
+      background: var(--cream-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-card);
+      padding: 24px;
+    }
+
+    .family_funds-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .family_cifra-flex {
+      display: flex;
+      gap: 28px;
+    }
+
+    .family_cifra-val {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--brown);
+      line-height: 1;
+    }
+
+    .family_cifra-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .family_right {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .family_header h3 {
+      font-size: 2.5rem;
+      line-height: 1.18;
+      color: var(--text-dark);
+      margin-bottom: 18px;
+    }
+
+    .family_header p {
+      font-size: 1.1rem;
+      color: var(--text-body);
+      line-height: 1.7;
+    }
+
+    .btn-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: var(--brown);
+      font-size: 0.95rem;
+    }
+
+    .btn-line:hover {
+      color: var(--hover-sand);
+    }
+
+    .family_cifra-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      border-top: 1px solid var(--border-light);
+      padding-top: 28px;
+    }
+
+    .family_cifra-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .family_item-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--brown);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .family_item-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Continuous Marquee Ticker (Exact Siwa Capital .section_line) */
+    .section_line {
+      padding: 1.75rem 0;
+      background-color: var(--white);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .line_ticker {
+      display: inline-flex;
+      animation: tickerRun 34s linear infinite;
+    }
+
+    @keyframes tickerRun {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
 
-    .ticker-item {
+    .ticker-pill {
       display: inline-flex;
       align-items: center;
       gap: 16px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.86rem;
+      margin-right: 48px;
+      font-size: 0.9rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #94a3b8;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
     }
 
-    .ticker-item span.dot {
+    .ticker-pill span.dot {
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      background: var(--primary);
+      background-color: var(--sand);
     }
 
-    /* Numbered Strategic Pillars (Siwa Capital .section_aligned) */
-    .section-pillars {
-      padding: 120px 0 90px;
+    /* Aligned Principles (Exact Siwa Capital .section_aligned) */
+    .section_aligned {
+      padding: 6.5rem 0;
+      background-color: var(--cream-bg);
       position: relative;
-      z-index: 10;
     }
 
-    .section-header-split {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
+    .header-aligned {
+      display: flex;
+      justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 64px;
+      gap: 3rem;
+      margin-bottom: 4rem;
     }
 
-    .section-h2 {
-      font-size: 2.7rem;
-      line-height: 1.18;
-      font-weight: 800;
+    .header-left h2 {
+      font-size: 2.8rem;
+      line-height: 1.15;
+      color: var(--text-dark);
     }
 
+    /* Signature Siwa Capital Gradient Span */
     .span-gradient {
-      background: linear-gradient(135deg, #ffffff 30%, var(--primary) 100%);
-      -webkit-background-clip: text;
+      background-image: linear-gradient(90deg, var(--brown) 40%, var(--sand-light) 80%, var(--sand-accent) 100%);
       -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
     }
 
-    .section-header-desc {
+    .header-filter {
+      max-width: 26rem;
       font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.7;
+      color: var(--text-body);
+      line-height: 1.6;
     }
 
-    .pillars-list {
+    .aligned_wrap {
       display: flex;
       flex-direction: column;
     }
 
-    .pillar-row {
-      display: grid;
-      grid-template-columns: 80px 1.4fr 2fr;
+    .aligned_item {
+      display: flex;
       align-items: center;
-      padding: 34px 16px;
-      border-top: 1px solid rgba(255, 255, 255, 0.09);
+      padding: 2.2rem 1rem;
       transition: var(--transition);
-      position: relative;
+      border-top: 1px solid var(--border-light);
     }
 
-    .pillar-row:last-child {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    .aligned_wrap .aligned_item:last-child {
+      border-bottom: 1px solid var(--border-light);
     }
 
-    .pillar-row:hover {
-      background: rgba(255, 255, 255, 0.03);
-      padding-left: 24px;
+    .aligned_item:hover {
+      background-color: var(--white);
+      padding-left: 2rem;
+      box-shadow: 0 8px 24px rgba(78, 57, 46, 0.05);
     }
 
-    .pillar-num {
-      font-family: 'Space Grotesk', sans-serif;
+    .number-blue {
+      width: 4rem;
       font-size: 1.35rem;
       font-weight: 800;
-      color: var(--primary);
-      letter-spacing: -0.02em;
+      color: var(--blue);
+      flex-shrink: 0;
     }
 
-    .pillar-title {
-      font-size: 1.32rem;
+    .aligned_p {
+      font-size: 1.35rem;
       font-weight: 700;
-      color: var(--text-white);
-      padding-right: 24px;
+      color: var(--text-dark);
+      flex: 1;
     }
 
-    .pillar-desc {
-      font-size: 0.96rem;
+    .aligned_detail {
+      font-size: 0.98rem;
       color: var(--text-muted);
-      line-height: 1.65;
+      max-width: 32rem;
     }
 
-    /* Split Venture Portfolio Cards (Siwa Capital .section_growing) */
-    .section-ventures {
-      padding: 100px 0;
-      position: relative;
-      z-index: 10;
+    /* Portfolio Slide Cards (Exact Siwa Capital .section_growing) */
+    .section_growing {
+      padding: 6.5rem 0;
+      background-color: var(--white);
     }
 
-    .ventures-stack {
+    .growing-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .growing-header h2 {
+      font-size: 2.8rem;
+      line-height: 1.15;
+    }
+
+    .portfolio-grid {
       display: flex;
       flex-direction: column;
-      gap: 32px;
-      margin-top: 50px;
+      gap: 2.5rem;
     }
 
-    .venture-split-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(28px) saturate(180%);
-      -webkit-backdrop-filter: blur(28px) saturate(180%);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-card);
+    .portfolio-slide-card {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
+      border-radius: var(--radius-card);
       overflow: hidden;
-      box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.65);
+      box-shadow: 0 16px 45px rgba(78, 57, 46, 0.08);
+      border: 1px solid var(--border-light);
+      background-color: var(--cream-bg);
       transition: var(--transition);
     }
 
-    .venture-split-card:hover {
-      border-color: var(--glass-border-hover);
-      box-shadow: 0 28px 70px -15px rgba(34, 196, 214, 0.22);
+    .portfolio-slide-card:hover {
+      box-shadow: 0 24px 60px rgba(78, 57, 46, 0.14);
+      transform: translateY(-3px);
     }
 
-    .venture-info {
-      padding: 48px 44px;
+    .portfolio-left-panel {
+      padding: 3.5rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .venture-category {
+    .portfolio-category {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: var(--primary);
+      font-size: 0.76rem;
+      color: var(--sand);
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .venture-name {
-      font-size: 2.1rem;
+    .portfolio-name {
+      font-size: 2.2rem;
       font-weight: 800;
-      color: #ffffff;
+      color: var(--text-dark);
       margin-bottom: 16px;
       line-height: 1.2;
     }
 
-    .venture-summary {
-      font-size: 1.02rem;
-      color: var(--text-muted);
+    .portfolio-desc {
+      font-size: 1.05rem;
+      color: var(--text-body);
       line-height: 1.7;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
-    .venture-tags-row {
+    .portfolio-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
-    .venture-tag-pill {
+    .tag-badge-pill {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.74rem;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 5px 12px;
       border-radius: var(--radius-pill);
-      color: #cbd5e1;
-      font-weight: 500;
+      background-color: var(--white);
+      border: 1px solid var(--border-light);
+      color: var(--text-muted);
+      font-weight: 600;
     }
 
-    .venture-card-visual {
-      background: linear-gradient(135deg, rgba(34, 196, 214, 0.12) 0%, rgba(10, 18, 28, 0.85) 100%);
-      border-left: 1px solid rgba(255, 255, 255, 0.08);
+    .potfolio-right-panel {
+      background: linear-gradient(135deg, #4e392e 0%, #291e18 100%);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 40px;
+      padding: 3rem;
       position: relative;
       overflow: hidden;
-    }
-
-    .visual-watermark {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 5rem;
-      font-weight: 900;
-      color: rgba(255, 255, 255, 0.04);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      white-space: nowrap;
-    }
-
-    .visual-badge-box {
-      background: rgba(8, 14, 22, 0.8);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(34, 196, 214, 0.35);
-      border-radius: var(--radius-sm);
-      padding: 24px 28px;
+      color: var(--white);
       text-align: center;
-      position: relative;
-      z-index: 2;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
     }
 
-    .visual-badge-box .box-icon {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+    .visual-motif {
+      font-size: 4rem;
+      margin-bottom: 16px;
     }
 
-    .visual-badge-box .box-title {
-      font-size: 1.15rem;
-      color: #ffffff;
+    .visual-motif-title {
+      font-size: 1.3rem;
       font-weight: 700;
-      margin-bottom: 4px;
+      color: var(--white);
+      margin-bottom: 6px;
     }
 
-    .visual-badge-box .box-status {
+    .visual-motif-sub {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.76rem;
-      color: var(--primary);
-      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--sand-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
-    /* Sanitized Case Studies Grid */
-    .section-cases {
-      padding: 100px 0;
-      position: relative;
-      z-index: 10;
+    /* Key Principles Banner (Exact Siwa Capital .section_key) */
+    .section_key {
+      padding: 6.5rem 0;
+      background-color: var(--cream-bg);
+      border-top: 1px solid var(--border-light);
+    }
+
+    .key-header-center {
+      text-align: center;
+      max-width: 44rem;
+      margin: 0 auto 3.5rem;
+    }
+
+    .key-header-center h2 {
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+    }
+
+    .key-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .key-card-box {
+      background-color: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-card);
+      padding: 2.8rem 2.2rem;
+      box-shadow: 0 10px 30px rgba(78, 57, 46, 0.05);
+      transition: var(--transition);
+    }
+
+    .key-card-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 45px rgba(78, 57, 46, 0.1);
+    }
+
+    .key-card-box .box-num {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--sand);
+      margin-bottom: 14px;
+    }
+
+    .key-card-box p {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    /* Sanitized Case Studies Section */
+    .section_cases {
+      padding: 6.5rem 0;
+      background-color: var(--white);
     }
 
     .cases-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 28px;
-      margin-top: 50px;
+      margin-top: 3.5rem;
     }
 
     .case-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(28px) saturate(180%);
-      -webkit-backdrop-filter: blur(28px) saturate(180%);
-      border: 1px solid var(--glass-border);
+      background-color: var(--cream-bg);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-card);
-      padding: 40px 36px;
-      transition: var(--transition);
+      padding: 3rem 2.5rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: var(--transition);
     }
 
     .case-card:hover {
-      border-color: var(--glass-border-hover);
+      background-color: var(--white);
+      box-shadow: 0 16px 40px rgba(78, 57, 46, 0.08);
       transform: translateY(-3px);
-      box-shadow: 0 20px 50px -10px rgba(34, 196, 214, 0.2);
     }
 
     .case-num {
       font-family: 'JetBrains Mono', monospace;
-      color: var(--primary);
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 700;
+      color: var(--sand);
       letter-spacing: 0.08em;
       margin-bottom: 12px;
     }
 
     .case-title {
       font-size: 1.45rem;
-      line-height: 1.32;
-      color: #ffffff;
+      line-height: 1.3;
       margin-bottom: 14px;
+      color: var(--text-dark);
     }
 
     .case-desc {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      line-height: 1.68;
+      font-size: 1rem;
+      color: var(--text-body);
+      line-height: 1.65;
       margin-bottom: 22px;
     }
 
@@ -704,519 +850,585 @@
 
     .case-points li {
       position: relative;
-      padding-left: 22px;
-      font-size: 0.9rem;
-      color: #cbd5e1;
+      padding-left: 20px;
+      font-size: 0.92rem;
+      color: var(--text-body);
       line-height: 1.55;
     }
 
     .case-points li::before {
-      content: '▹';
+      content: '—';
       position: absolute;
       left: 0;
-      color: var(--primary);
+      color: var(--brown);
       font-weight: 700;
     }
 
-    /* Thought Leadership Feature Section */
-    .section-thought {
-      padding: 90px 0;
-      position: relative;
-      z-index: 10;
+    /* Thought Leadership Publication Banner */
+    .section_thought {
+      padding: 6.5rem 0;
+      background-color: var(--cream-bg);
     }
 
-    .thought-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(28px) saturate(180%);
-      -webkit-backdrop-filter: blur(28px) saturate(180%);
-      border: 1px solid var(--glass-border);
+    .thought-banner-card {
+      background-color: var(--white);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-card);
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.15fr 0.85fr;
       overflow: hidden;
-      box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.7);
-      margin-top: 50px;
+      box-shadow: 0 20px 50px rgba(78, 57, 46, 0.08);
+      margin-top: 3.5rem;
     }
 
-    .thought-info {
-      padding: 50px 46px;
+    .thought-content {
+      padding: 4rem;
     }
 
-    .thought-meta {
+    .thought-tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.78rem;
-      color: var(--primary);
+      color: var(--sand);
       font-weight: 700;
       letter-spacing: 0.08em;
       margin-bottom: 14px;
     }
 
     .thought-title {
-      font-size: 2rem;
+      font-size: 2.1rem;
       line-height: 1.25;
-      color: #ffffff;
+      color: var(--text-dark);
       margin-bottom: 18px;
     }
 
-    .thought-desc {
-      font-size: 1.02rem;
-      color: var(--text-muted);
+    .thought-p {
+      font-size: 1.05rem;
+      color: var(--text-body);
       line-height: 1.7;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
-    .thought-img {
+    .thought-visual {
       position: relative;
-      min-height: 340px;
     }
 
-    .thought-img img {
+    .thought-visual img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     /* Certifications Grid */
-    .section-certs {
-      padding: 100px 0 120px;
-      position: relative;
-      z-index: 10;
+    .section_certs {
+      padding: 6.5rem 0;
+      background-color: var(--white);
     }
 
-    .cert-grid {
+    .certs-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
-      margin-top: 50px;
+      margin-top: 3.5rem;
     }
 
-    .cert-box {
-      background: var(--bg-card);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-sm);
-      padding: 26px 22px;
+    .cert-item-card {
+      background-color: var(--cream-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 1rem;
+      padding: 24px 20px;
       transition: var(--transition);
     }
 
-    .cert-box:hover {
-      border-color: rgba(34, 196, 214, 0.5);
+    .cert-item-card:hover {
+      background-color: var(--white);
+      box-shadow: 0 10px 25px rgba(78, 57, 46, 0.08);
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
     }
 
     .cert-issuer {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem;
-      color: var(--primary);
+      color: var(--brown);
       font-weight: 700;
       letter-spacing: 0.05em;
       margin-bottom: 8px;
     }
 
     .cert-name {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #ffffff;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--text-dark);
       line-height: 1.35;
     }
 
-    /* Executive Footer (Siwa Capital Style) */
-    footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.09);
-      background: rgba(6, 9, 13, 0.92);
-      backdrop-filter: blur(24px);
-      padding: 80px 0 40px;
+    /* Section CTA (Exact Siwa Capital .section_cta) */
+    .section_cta {
+      padding: 6.5rem 0;
+      background-color: var(--cream-bg);
       position: relative;
-      z-index: 10;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 0.6fr;
-      gap: 60px;
-      margin-bottom: 60px;
+    .cta_wrap {
+      background: linear-gradient(135deg, var(--brown) 0%, #2c1e17 100%);
+      border-radius: var(--radius-lg);
+      padding: 5rem 3.5rem;
+      text-align: center;
+      color: var(--white);
+      box-shadow: 0 24px 60px rgba(78, 57, 46, 0.18);
     }
 
-    .footer-brand h3 {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-      color: #ffffff;
+    .cta_wrap h2 {
+      font-size: 3.2rem;
+      color: var(--white);
+      margin-bottom: 16px;
     }
 
-    .footer-brand p {
-      font-size: 1.02rem;
-      color: var(--text-muted);
-      max-width: 520px;
+    .cta_wrap p {
+      font-size: 1.15rem;
+      color: var(--cream);
+      max-width: 38rem;
+      margin: 0 auto 32px;
       line-height: 1.65;
-      margin-bottom: 28px;
     }
 
-    .footer-contact-actions {
+    .cta-actions {
       display: flex;
+      justify-content: center;
       gap: 16px;
       flex-wrap: wrap;
     }
 
-    .footer-links-col {
+    /* Footer (Exact Siwa Capital .footer with Rounded Top Corners) */
+    .footer {
+      background-color: var(--black);
+      color: var(--white);
+      border-top-left-radius: 1.75rem;
+      border-top-right-radius: 1.75rem;
+      padding: 4.5rem 0 3.5rem;
+    }
+
+    .footer_grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer_brand h3 {
+      font-size: 1.8rem;
+      color: var(--white);
+      margin-bottom: 14px;
+      letter-spacing: 0.02em;
+    }
+
+    .footer_brand p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 36rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .footer-btn-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer_links-col {
       display: flex;
       flex-direction: column;
       gap: 14px;
+    }
+
+    .footer-nav-heading {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 8px;
+    }
+
+    .footer-link {
       font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.75);
+      transition: color 0.2s ease;
     }
 
-    .footer-link-item {
-      color: var(--text-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .footer-link:hover {
+      color: var(--white);
     }
 
-    .footer-link-item:hover {
-      color: var(--primary);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
-      padding-top: 30px;
+    .footer_bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 0.85rem;
-      color: var(--text-dim);
+      color: rgba(255, 255, 255, 0.5);
     }
 
     /* Responsive */
     @media (max-width: 1024px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-      .section-header-split { grid-template-columns: 1fr; gap: 20px; }
-      .pillar-row { grid-template-columns: 60px 1fr; gap: 12px; }
-      .pillar-desc { grid-column: 2 / 3; }
-      .venture-split-card { grid-template-columns: 1fr; }
-      .venture-card-visual { min-height: 240px; border-left: none; border-top: 1px solid rgba(255, 255, 255, 0.08); }
-      .thought-card { grid-template-columns: 1fr; }
-      .thought-img { min-height: 260px; }
+      .hero_wrap { flex-direction: column; align-items: flex-start; }
+      .hero_right-wrap { align-items: flex-start; text-align: left; }
+      .family_wrap { grid-template-columns: 1fr; }
+      .header-aligned { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .portfolio-slide-card { grid-template-columns: 1fr; }
+      .thought-banner-card { grid-template-columns: 1fr; }
       .cases-grid { grid-template-columns: 1fr; }
-      .cert-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .certs-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer_grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
-      .hero-title { font-size: 2.5rem; }
-      .nav-links { display: none; }
-      nav { top: 10px; }
-      .cert-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .navbar-links-desktop { display: none; }
+      .navbar-wrapper { width: calc(100% - 2rem); padding: 0.6rem 1.2rem; }
+      .hero_h { font-size: 2.5rem; }
+      .key-cards-grid { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: 1fr; }
+      .footer_bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Cinematic Video Background & Luxury Atmospheric Overlay -->
-  <div class="hero-video-container">
-    <video autoplay loop muted playsinline poster="ocean_beach.jpg">
-      <source src="siwa_video.mp4" type="video/mp4">
-    </video>
-    <div class="hero-video-overlay"></div>
-  </div>
-
-  <!-- Minimalist Floating Navigation Header -->
-  <nav>
-    <div class="nav-inner">
-      <a href="#" class="logo-brand">
-        <img src="profile.jpg" alt="RICHARD KWAME APPIAH" class="logo-avatar">
+  <!-- Minimalist Floating Navigation (Exact Siwa Capital Navbar) -->
+  <div class="navbar">
+    <div class="navbar-wrapper">
+      <a href="#" class="navbar-logo-flex">
+        <img src="profile.jpg" alt="RICHARD KWAME APPIAH" class="navbar-logo-avatar">
         <span>RICHARD KWAME APPIAH</span>
       </a>
-      <div class="nav-links">
-        <a href="#pillars" class="nav-link">Pillars</a>
-        <a href="#ventures" class="nav-link">Ventures</a>
-        <a href="#case-studies" class="nav-link">Case Studies</a>
-        <a href="#thought-leadership" class="nav-link">Research</a>
-        <a href="#credentials" class="nav-link">Certifications</a>
+      <div class="navbar-links-desktop">
+        <a href="#about" class="navbar-link">About</a>
+        <a href="#pillars" class="navbar-link">Pillars</a>
+        <a href="#ventures" class="navbar-link">Ventures</a>
+        <a href="#case-studies" class="navbar-link">Case Studies</a>
+        <a href="#research" class="navbar-link">Research</a>
+        <a href="#credentials" class="navbar-link">Certifications</a>
       </div>
-      <a href="mailto:Richard.k.appiah.ca@gmail.com" class="btn-pill btn-primary">
-        <span>Get in Touch</span>
+      <a href="mailto:Richard.k.appiah.ca@gmail.com" class="button button-mb-brown btn-arrow">
+        <div>Get in Touch</div>
         <div class="icon-arrow">
-          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="none">
-            <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2.33301 8H13.553" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+            <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2.33301 8H13.553" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
       </a>
     </div>
-  </nav>
+  </div>
 
-  <!-- Fullscreen Cinematic Hero Section (Siwa Capital Layout) -->
-  <section class="section-hero">
-    <div class="container">
-      <div class="hero-grid">
-        
-        <!-- Left: Authoritative Editorial Presentation -->
-        <div class="hero-content">
-          <div class="tag-badge mono">
-            <span class="pulse-dot"></span>
-            <span>CYBERSECURITY GOVERNANCE &bull; LEAD IT AUDITOR &bull; FOUNDER</span>
+  <!-- Hero Section (Exact Siwa Capital .section_hero with Atmospheric Horizon & NO Horse Video) -->
+  <section class="section_hero">
+    <div class="vid-bg">
+      <div class="overlay"></div>
+      <img src="ocean_beach.jpg" alt="Atmospheric Horizon" class="hero-img-bg">
+    </div>
+    
+    <div class="container" style="width: 100%;">
+      <div class="hero_wrap">
+        <div class="hero_h-wrap">
+          <div class="hero_tag_badge mono">
+            <span>Cybersecurity Governance &bull; Lead IT Auditor &bull; Founder</span>
           </div>
-          <h1 class="hero-title">
-            Securing Critical Infrastructure & Systems Across <span>West & East Africa</span>
-          </h1>
-          <p class="hero-desc">
+          <h1 class="hero_h">Securing Critical Infrastructure & Systems Across West & East Africa</h1>
+          <p class="p-hero">
             Over 9 years of cross-functional authority bridging hands-on technical defense (SIEM, Forensics, Red Teaming) with executive governance (ISO 27001 Lead Implementer & Auditor, DoD RMF). Currently embedded at the <strong>Bank of Ghana (FICSOC)</strong> and Founder of <strong>Globitech Cyber Solutions</strong>.
           </p>
-          <div class="hero-actions">
-            <a href="#ventures" class="btn-pill btn-primary">
-              <span>Explore Ventures</span>
+          <div class="btn-flex">
+            <a href="#ventures" class="button button-mb-brown btn-arrow">
+              <div>Explore Ventures</div>
               <div class="icon-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="none">
-                  <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M2.33301 8H13.553" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+                  <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2.33301 8H13.553" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
             </a>
-            <a href="resume.html" target="_blank" class="btn-pill btn-glass">
-              <span>View Executive CV</span>
+            <a href="resume.html" target="_blank" class="button is-glass btn-arrow">
+              <div>View Executive Resume</div>
               <div class="icon-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="none">
-                  <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M2.33301 8H13.553" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+                  <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2.33301 8H13.553" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
             </a>
           </div>
         </div>
 
-        <!-- Right: Executive Institutional Numbers -->
-        <div class="hero-stats-panel">
-          <div class="stat-row">
-            <div class="stat-number">9<span>+</span></div>
-            <div class="stat-label">Years of Critical Infrastructure Defense</div>
+        <div class="hero_right-wrap">
+          <div class="hero_assets">
+            <div class="hero_cifra-anime">
+              <div>9</div><div>+</div>
+            </div>
+            <div class="hero_assets-label">Years of Infrastructure Defense</div>
           </div>
-          <div class="stat-row">
-            <div class="stat-number">ISO 27001</div>
-            <div class="stat-label">Lead Implementer & Certified Auditor</div>
-          </div>
-          <div class="stat-row">
-            <div class="stat-number">3<span>+</span></div>
-            <div class="stat-label">Scaled Enterprise & Health-Tech Ventures</div>
-          </div>
-          <a href="#ticker" class="scroll-explore">
-            <span>Scroll to Explore</span>
+          <a href="#about" class="btn-scroll">
+            <div>Scroll to Explore</div>
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="none">
-              <path d="M12.0469 9.62012L8.00021 13.6668L3.95354 9.62012" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8 2.3335L8 13.5535" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12.0469 9.62012L8.00021 13.6668L3.95354 9.62012" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 2.3335L8 13.5535" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Infinite Institutional Marquee Ticker (Siwa Capital Style) -->
-  <div class="section-ticker" id="ticker">
-    <div class="ticker-track">
-      <div class="ticker-item">BANK OF GHANA (FICSOC) <span class="dot"></span></div>
-      <div class="ticker-item">GLOBITECH CYBER SOLUTIONS <span class="dot"></span></div>
-      <div class="ticker-item">ISO/IEC 27001 LEAD IMPLEMENTER & AUDITOR <span class="dot"></span></div>
-      <div class="ticker-item">U.S. DEPT OF HOMELAND SECURITY CIP <span class="dot"></span></div>
-      <div class="ticker-item">DOD RISK MANAGEMENT FRAMEWORK (RMF) <span class="dot"></span></div>
-      <div class="ticker-item">WO~MENS HAVEN <span class="dot"></span></div>
-      <div class="ticker-item">RSAMS INVENTORY SYSTEM <span class="dot"></span></div>
-      <div class="ticker-item">NIST CYBERSECURITY FRAMEWORK <span class="dot"></span></div>
-      <div class="ticker-item">PCI-DSS COMPLIANCE <span class="dot"></span></div>
-      <div class="ticker-item">LOGRHYTHM SIEM ADMINISTRATOR <span class="dot"></span></div>
-      <div class="ticker-item">ORACLE CLOUD (OCI) ARCHITECT <span class="dot"></span></div>
-      <div class="ticker-item">EC-COUNCIL CERTIFIED SOC ANALYST <span class="dot"></span></div>
-      <div class="ticker-item">CISCO NETWORK DEFENSE <span class="dot"></span></div>
-
-      <!-- Duplicate for seamless infinite loop -->
-      <div class="ticker-item">BANK OF GHANA (FICSOC) <span class="dot"></span></div>
-      <div class="ticker-item">GLOBITECH CYBER SOLUTIONS <span class="dot"></span></div>
-      <div class="ticker-item">ISO/IEC 27001 LEAD IMPLEMENTER & AUDITOR <span class="dot"></span></div>
-      <div class="ticker-item">U.S. DEPT OF HOMELAND SECURITY CIP <span class="dot"></span></div>
-      <div class="ticker-item">DOD RISK MANAGEMENT FRAMEWORK (RMF) <span class="dot"></span></div>
-      <div class="ticker-item">WO~MENS HAVEN <span class="dot"></span></div>
-      <div class="ticker-item">RSAMS INVENTORY SYSTEM <span class="dot"></span></div>
-      <div class="ticker-item">NIST CYBERSECURITY FRAMEWORK <span class="dot"></span></div>
-      <div class="ticker-item">PCI-DSS COMPLIANCE <span class="dot"></span></div>
-      <div class="ticker-item">LOGRHYTHM SIEM ADMINISTRATOR <span class="dot"></span></div>
-      <div class="ticker-item">ORACLE CLOUD (OCI) ARCHITECT <span class="dot"></span></div>
-      <div class="ticker-item">EC-COUNCIL CERTIFIED SOC ANALYST <span class="dot"></span></div>
-      <div class="ticker-item">CISCO NETWORK DEFENSE <span class="dot"></span></div>
-    </div>
-  </div>
-
-  <!-- Numbered Strategic Pillars (Siwa Capital .section_aligned) -->
-  <section class="section-pillars" id="pillars">
+  <!-- About / Leadership Authority Section (Exact Siwa Capital .section_family) -->
+  <section id="about" class="section_family">
     <div class="container">
-      <div class="section-header-split">
-        <h2 class="section-h2">
-          Aligned. Technical. <br/>
-          <span class="span-gradient">Built for Enterprise Governance.</span>
-        </h2>
-        <p class="section-header-desc">
-          Over 9 years of hands-on technical execution and C-suite advisory, safeguarding national financial assets and architecting resilient digital ecosystems.
-        </p>
-      </div>
-
-      <div class="pillars-list">
-        <div class="pillar-row">
-          <div class="pillar-num">01</div>
-          <div class="pillar-title">Critical Financial Sector Defense</div>
-          <div class="pillar-desc">
-            Embedded at the Bank of Ghana (FICSOC), driving 24/7 SIEM monitoring, threat intelligence correlation, and operational resilience across Ghana’s financial infrastructure.
+      <div class="family_wrap">
+        <div class="family_left">
+          <img src="profile.jpg" alt="RICHARD KWAME APPIAH" class="img-scale">
+          <div class="family_funds">
+            <div class="family_funds-title">Operational Scope & Governance</div>
+            <div class="family_cifra-flex">
+              <div>
+                <div class="family_cifra-val">100+</div>
+                <div class="family_cifra-sub">Financial Institutions (FICSOC)</div>
+              </div>
+              <div>
+                <div class="family_cifra-val">3</div>
+                <div class="family_cifra-sub">Proprietary Scaled Ventures</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pillar-row">
-          <div class="pillar-num">02</div>
-          <div class="pillar-title">ISO 27001 Lead Implementation & Audits</div>
-          <div class="pillar-desc">
-            Full-lifecycle ISMS architecture, gap remediation, IT General Controls (ITGC) auditing, and delivering C-suite risk workpapers across Ghana, Nigeria, and Tanzania.
+        <div class="family_right">
+          <div class="family_header">
+            <h3>Executive Governance Built on Real-World Defense and Founder Experience</h3>
+            <p>
+              I bridge hands-on technical cybersecurity engineering with board-level IT audit workpapers, regulatory risk assurance, and scalable software architecture. Embedded at the Bank of Ghana (FICSOC) and founder of Globitech Cyber Solutions.
+            </p>
           </div>
-        </div>
-
-        <div class="pillar-row">
-          <div class="pillar-num">03</div>
-          <div class="pillar-title">SIEM Engineering & Digital Forensics</div>
-          <div class="pillar-desc">
-            Hands-on LogRhythm platform administration, evidentiary disk and memory forensic triage, threat hunting, and rapid root-cause incident containment.
-          </div>
-        </div>
-
-        <div class="pillar-row">
-          <div class="pillar-num">04</div>
-          <div class="pillar-title">Commercial Ventures & SaaS Architecture</div>
-          <div class="pillar-desc">
-            Founder and product architect of Globitech Cyber Solutions, WO~MENS HAVEN, and RSams Inventory Management System—building secure, zero-trust enterprise platforms.
+          <a href="#pillars" class="btn-line">
+            <div>More on My Approach</div>
+            <div class="b-line">&rarr;</div>
+          </a>
+          <div class="family_cifra-grid">
+            <div class="family_cifra-item">
+              <div class="family_item-num">9+</div>
+              <div class="family_item-desc">Years of critical infrastructure defense</div>
+            </div>
+            <div class="family_cifra-item">
+              <div class="family_item-num">25+</div>
+              <div class="family_item-desc">Regulatory audit workpapers & ISO engagements</div>
+            </div>
+            <div class="family_cifra-item">
+              <div class="family_item-num">18+</div>
+              <div class="family_item-desc">Global credentials & technical frameworks</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Ventures Split Cards Section (Siwa Capital .section_growing) -->
-  <section class="section-ventures" id="ventures">
+  <!-- Continuous Marquee Ticker (Exact Siwa Capital .section_line) -->
+  <section class="section_line">
+    <div class="line_ticker">
+      <div class="ticker-pill">BANK OF GHANA (FICSOC) <span class="dot"></span></div>
+      <div class="ticker-pill">GLOBITECH CYBER SOLUTIONS <span class="dot"></span></div>
+      <div class="ticker-pill">ISO/IEC 27001:2022 LEAD AUDITOR <span class="dot"></span></div>
+      <div class="ticker-pill">U.S. DEPT OF HOMELAND SECURITY CIP <span class="dot"></span></div>
+      <div class="ticker-pill">DOD RISK MANAGEMENT FRAMEWORK (RMF) <span class="dot"></span></div>
+      <div class="ticker-pill">WO~MENS HAVEN <span class="dot"></span></div>
+      <div class="ticker-pill">RSAMS INVENTORY SYSTEM <span class="dot"></span></div>
+      <div class="ticker-pill">NIST CYBERSECURITY FRAMEWORK <span class="dot"></span></div>
+      <div class="ticker-pill">PCI-DSS COMPLIANCE <span class="dot"></span></div>
+      <div class="ticker-pill">LOGRHYTHM SIEM ADMINISTRATOR <span class="dot"></span></div>
+      <div class="ticker-pill">ORACLE CLOUD (OCI) ARCHITECT <span class="dot"></span></div>
+      <div class="ticker-pill">EC-COUNCIL CERTIFIED SOC ANALYST <span class="dot"></span></div>
+      <div class="ticker-pill">CISCO NETWORK DEFENSE <span class="dot"></span></div>
+
+      <!-- Duplicate for infinite seamless scroll -->
+      <div class="ticker-pill">BANK OF GHANA (FICSOC) <span class="dot"></span></div>
+      <div class="ticker-pill">GLOBITECH CYBER SOLUTIONS <span class="dot"></span></div>
+      <div class="ticker-pill">ISO/IEC 27001:2022 LEAD AUDITOR <span class="dot"></span></div>
+      <div class="ticker-pill">U.S. DEPT OF HOMELAND SECURITY CIP <span class="dot"></span></div>
+      <div class="ticker-pill">DOD RISK MANAGEMENT FRAMEWORK (RMF) <span class="dot"></span></div>
+      <div class="ticker-pill">WO~MENS HAVEN <span class="dot"></span></div>
+      <div class="ticker-pill">RSAMS INVENTORY SYSTEM <span class="dot"></span></div>
+      <div class="ticker-pill">NIST CYBERSECURITY FRAMEWORK <span class="dot"></span></div>
+      <div class="ticker-pill">PCI-DSS COMPLIANCE <span class="dot"></span></div>
+      <div class="ticker-pill">LOGRHYTHM SIEM ADMINISTRATOR <span class="dot"></span></div>
+      <div class="ticker-pill">ORACLE CLOUD (OCI) ARCHITECT <span class="dot"></span></div>
+      <div class="ticker-pill">EC-COUNCIL CERTIFIED SOC ANALYST <span class="dot"></span></div>
+      <div class="ticker-pill">CISCO NETWORK DEFENSE <span class="dot"></span></div>
+    </div>
+  </section>
+
+  <!-- Aligned Principles Section (Exact Siwa Capital .section_aligned) -->
+  <section id="pillars" class="section_aligned">
     <div class="container">
-      <div class="section-header-split">
-        <div>
-          <span class="tag-badge mono" style="margin-bottom: 12px;">FOUNDER & PRODUCT ARCHITECT</span>
-          <h2 class="section-h2">Commercial Ventures & Platforms</h2>
+      <div class="header-aligned">
+        <div class="header-left">
+          <h2>Aligned. Technical. <br/><span class="span-gradient">Built for Enterprise Governance.</span></h2>
         </div>
-        <p class="section-header-desc">
-          Proprietary enterprise solutions and consumer applications founded, engineered, and secured under Globitech Cyber Solutions.
-        </p>
+        <div class="header-filter">
+          We’ve been in the trenches—our approach is grounded in real-world critical infrastructure defense, regulatory assurance, and proprietary software architecture.
+        </div>
       </div>
 
-      <div class="ventures-stack">
+      <div class="aligned_wrap">
+        <div class="aligned_item">
+          <div class="number-blue">01</div>
+          <div class="aligned_p">Critical Financial Sector Defense & FICSOC Operations</div>
+          <div class="aligned_detail">
+            24/7 SIEM monitoring, threat intelligence correlation, and operational resilience across Ghana's national financial ecosystem.
+          </div>
+        </div>
+
+        <div class="aligned_item">
+          <div class="number-blue">02</div>
+          <div class="aligned_p">ISO 27001 Lead Implementation & Regulatory Assurance</div>
+          <div class="aligned_detail">
+            Full-lifecycle ISMS architecture, gap remediation, ITGC controls auditing, and C-suite audit workpapers across Ghana, Nigeria, and Tanzania.
+          </div>
+        </div>
+
+        <div class="aligned_item">
+          <div class="number-blue">03</div>
+          <div class="aligned_p">Hands-on Digital Forensics & Threat Containment</div>
+          <div class="aligned_detail">
+            LogRhythm platform administration, evidentiary disk/memory analysis, and rapid root-cause incident response.
+          </div>
+        </div>
+
+        <div class="aligned_item">
+          <div class="number-blue">04</div>
+          <div class="aligned_p">Founder & Full-Stack Platform Engineering</div>
+          <div class="aligned_detail">
+            Architect of proprietary enterprise and health-tech software platforms (RSams Inventory, WO~MENS HAVEN) with strict zero-trust security.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Growing Portfolio / Commercial Ventures (Exact Siwa Capital .section_growing) -->
+  <section id="ventures" class="section_growing">
+    <div class="container">
+      <div class="growing-header">
+        <div class="header-left">
+          <h2>A Growing Portfolio of <br/><span class="span-gradient">Enduring Ventures & Platforms</span></h2>
+        </div>
+        <div class="header-filter">
+          Commercial and consumer digital platforms engineered, scaled, and secured by RICHARD KWAME APPIAH under Globitech Cyber Solutions.
+        </div>
+      </div>
+
+      <div class="portfolio-grid">
         
         <!-- Venture 1: Globitech -->
-        <div class="venture-split-card">
-          <div class="venture-info">
+        <div class="portfolio-slide-card">
+          <div class="portfolio-left-panel">
             <div>
-              <div class="venture-category">CYBERSECURITY CONSULTING & MANAGED DEFENSE</div>
-              <h3 class="venture-name">Globitech Cyber Solutions</h3>
-              <p class="venture-summary">
-                Premier cybersecurity and IT governance firm providing advisory, SOC operations, vulnerability assessments, penetration testing, and ISO 27001 certification readiness across Africa.
+              <div class="portfolio-category">CYBERSECURITY CONSULTING & MANAGED DEFENSE</div>
+              <h3 class="portfolio-name">Globitech Cyber Solutions</h3>
+              <p class="portfolio-desc">
+                A premier cybersecurity firm providing managed SOC operations, vulnerability assessments, penetration testing, and ISO 27001 readiness. Founded and led as Principal Consultant.
               </p>
-              <div class="venture-tags-row">
-                <span class="venture-tag-pill">SOC Operations</span>
-                <span class="venture-tag-pill">ISO 27001 Lead Audits</span>
-                <span class="venture-tag-pill">Red Teaming</span>
-                <span class="venture-tag-pill">Cloud Security</span>
+              <div class="portfolio-tags">
+                <span class="tag-badge-pill">SOC Operations</span>
+                <span class="tag-badge-pill">ISO 27001 Audits</span>
+                <span class="tag-badge-pill">Red Teaming</span>
+                <span class="tag-badge-pill">Cloud Security</span>
               </div>
             </div>
-            <a href="https://globitechcybersolutions.com" target="_blank" class="btn-pill btn-primary">
-              <span>Visit globitechcybersolutions.com</span>
-              <div class="icon-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="none">
-                  <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M2.33301 8H13.553" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            </a>
+            <div>
+              <a href="https://globitechcybersolutions.com" target="_blank" class="button button-mb-brown btn-arrow">
+                <div>Visit globitechcybersolutions.com</div>
+                <div class="icon-arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+                    <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2.33301 8H13.553" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="venture-card-visual">
-            <div class="visual-watermark">GLOBITECH</div>
-            <div class="visual-badge-box">
-              <div class="box-icon">🛡️</div>
-              <div class="box-title">Managed Security & Governance</div>
-              <div class="box-status">ACTIVE ENTERPRISE CLIENTS</div>
-            </div>
+          <div class="potfolio-right-panel">
+            <div class="visual-motif">🛡️</div>
+            <div class="visual-motif-title">Globitech Cyber Solutions</div>
+            <div class="visual-motif-sub">Managed Security & Governance</div>
           </div>
         </div>
 
         <!-- Venture 2: WO~MENS HAVEN -->
-        <div class="venture-split-card">
-          <div class="venture-info">
+        <div class="portfolio-slide-card">
+          <div class="portfolio-left-panel">
             <div>
-              <div class="venture-category">HEALTH-TECH & CONSUMER DIGITAL PLATFORM</div>
-              <h3 class="venture-name">WO~MENS HAVEN</h3>
-              <p class="venture-summary">
-                Dedicated digital wellness, reproductive health education, and telehealth consultation mobile application. Architected with end-to-end data encryption and strict HIPAA-level privacy safeguards.
+              <div class="portfolio-category">HEALTH-TECH & TELEMEDICINE ECOSYSTEM</div>
+              <h3 class="portfolio-name">WO~MENS HAVEN</h3>
+              <p class="portfolio-desc">
+                A dedicated digital wellness, reproductive health education, and telehealth consultation mobile application. Architected with end-to-end encryption and strict HIPAA-grade privacy safeguards.
               </p>
-              <div class="venture-tags-row">
-                <span class="venture-tag-pill">Telehealth Architecture</span>
-                <span class="venture-tag-pill">Encrypted Messaging</span>
-                <span class="venture-tag-pill">Privacy Safeguards</span>
-                <span class="venture-tag-pill">Health Data Governance</span>
+              <div class="portfolio-tags">
+                <span class="tag-badge-pill">Telehealth Architecture</span>
+                <span class="tag-badge-pill">Encrypted Messaging</span>
+                <span class="tag-badge-pill">Privacy Safeguards</span>
+                <span class="tag-badge-pill">Health Data Governance</span>
               </div>
             </div>
-            <a href="https://sisters-haven.com" target="_blank" class="btn-pill btn-primary">
-              <span>Visit sisters-haven.com</span>
-              <div class="icon-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="none">
-                  <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M2.33301 8H13.553" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            </a>
+            <div>
+              <a href="https://sisters-haven.com" target="_blank" class="button button-mb-brown btn-arrow">
+                <div>Visit sisters-haven.com</div>
+                <div class="icon-arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+                    <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2.33301 8H13.553" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="venture-card-visual">
-            <div class="visual-watermark">HAVEN</div>
-            <div class="visual-badge-box">
-              <div class="box-icon">🌸</div>
-              <div class="box-title">Women's Health & Wellness</div>
-              <div class="box-status">LIVE APP ECOSYSTEM</div>
-            </div>
+          <div class="potfolio-right-panel" style="background: linear-gradient(135deg, #3f2c22 0%, #1f1510 100%);">
+            <div class="visual-motif">🌸</div>
+            <div class="visual-motif-title">WO~MENS HAVEN</div>
+            <div class="visual-motif-sub">Women's Health & Wellness App</div>
           </div>
         </div>
 
         <!-- Venture 3: RSams Inventory -->
-        <div class="venture-split-card">
-          <div class="venture-info">
+        <div class="portfolio-slide-card">
+          <div class="portfolio-left-panel">
             <div>
-              <div class="venture-category">ENTERPRISE SAAS & INVENTORY TRACKING</div>
-              <h3 class="venture-name">RSams Inventory System</h3>
-              <p class="venture-summary">
-                High-availability accounting, warehouse tracking, and multi-location inventory tracking software. Architected with strict zero-trust identity verification, Cloudflare Access security perimeters, and automated audit logs.
+              <div class="portfolio-category">ENTERPRISE SAAS & INVENTORY TRACKING</div>
+              <h3 class="portfolio-name">RSams Inventory System</h3>
+              <p class="portfolio-desc">
+                High-availability warehouse tracking, stock logistics, and accounting management software. Engineered with automated audit trails, zero-trust access perimeters, and multi-tenant license security.
               </p>
-              <div class="venture-tags-row">
-                <span class="venture-tag-pill">Warehouse Tracking</span>
-                <span class="venture-tag-pill">Audit Reconciliation</span>
-                <span class="venture-tag-pill">Zero-Trust Access</span>
-                <span class="venture-tag-pill">SaaS License Engine</span>
+              <div class="portfolio-tags">
+                <span class="tag-badge-pill">Warehouse Tracking</span>
+                <span class="tag-badge-pill">Audit Reconciliation</span>
+                <span class="tag-badge-pill">Zero-Trust Access</span>
+                <span class="tag-badge-pill">SaaS License Engine</span>
               </div>
             </div>
-            <a href="https://license.globitechcybersolutions.com" target="_blank" class="btn-pill btn-primary">
-              <span>Visit license.globitechcybersolutions.com</span>
-              <div class="icon-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="none">
-                  <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M2.33301 8H13.553" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            </a>
+            <div>
+              <a href="https://license.globitechcybersolutions.com" target="_blank" class="button button-mb-brown btn-arrow">
+                <div>Visit license.globitechcybersolutions.com</div>
+                <div class="icon-arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+                    <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2.33301 8H13.553" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="venture-card-visual">
-            <div class="visual-watermark">RSAMS</div>
-            <div class="visual-badge-box">
-              <div class="box-icon">📊</div>
-              <div class="box-title">Enterprise Warehouse Tracking</div>
-              <div class="box-status">COMMERCIAL DEPLOYMENTS</div>
-            </div>
+          <div class="potfolio-right-panel" style="background: linear-gradient(135deg, #2d2019 0%, #17100c 100%);">
+            <div class="visual-motif">📊</div>
+            <div class="visual-motif-title">RSams Inventory System</div>
+            <div class="visual-motif-sub">Enterprise Warehouse Tracking</div>
           </div>
         </div>
 
@@ -1224,17 +1436,41 @@
     </div>
   </section>
 
-  <!-- Sanitized Case Studies Section -->
-  <section class="section-cases" id="case-studies">
+  <!-- Key Strengths Banner (Exact Siwa Capital .section_key) -->
+  <section class="section_key">
     <div class="container">
-      <div class="section-header-split">
-        <div>
-          <span class="tag-badge mono" style="margin-bottom: 12px;">FIELD EVIDENCE & METHODOLOGY</span>
-          <h2 class="section-h2">Sanitized Audit Case Studies</h2>
+      <div class="key-header-center">
+        <h2>Key Strengths and Principles</h2>
+        <p style="color: var(--text-body);">Core tenets governing every security engagement, audit workpaper, and platform architecture.</p>
+      </div>
+
+      <div class="key-cards-grid">
+        <div class="key-card-box">
+          <div class="box-num">01</div>
+          <p>First-hand central bank operational experience means I know what truly matters in high-stakes environments.</p>
         </div>
-        <p class="section-header-desc">
-          Methodologies demonstrating how I audit mission-critical infrastructure, enforce ISO 27001 regulatory compliance, and eliminate high-impact operational risk.
-        </p>
+        <div class="key-card-box">
+          <div class="box-num">02</div>
+          <p>Auditing with operator empathy: bridging technical engineering reality with rigorous regulatory compliance.</p>
+        </div>
+        <div class="key-card-box">
+          <div class="box-num">03</div>
+          <p>Decisive action, evidence-based reporting, and open communication at every audit and incident stage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sanitized Field Evidence & Case Studies -->
+  <section id="case-studies" class="section_cases">
+    <div class="container">
+      <div class="growing-header">
+        <div class="header-left">
+          <h2>Sanitized Enterprise <br/><span class="span-gradient">Audit Case Studies</span></h2>
+        </div>
+        <div class="header-filter">
+          Proven methodologies demonstrating how I audit mission-critical infrastructure, enforce ISO 27001 regulatory compliance, and eliminate high-impact operational risk.
+        </div>
       </div>
 
       <div class="cases-grid">
@@ -1305,102 +1541,100 @@
     </div>
   </section>
 
-  <!-- Thought Leadership Feature Section -->
-  <section class="section-thought" id="thought-leadership">
+  <!-- Thought Leadership Publication Banner -->
+  <section id="research" class="section_thought">
     <div class="container">
-      <div class="section-header-split">
-        <div>
-          <span class="tag-badge mono" style="margin-bottom: 12px;">STRATEGIC RESEARCH & PUBLICATIONS</span>
-          <h2 class="section-h2">Thought Leadership</h2>
+      <div class="growing-header">
+        <div class="header-left">
+          <h2>Strategic Research & <br/><span class="span-gradient">Thought Leadership</span></h2>
         </div>
-        <p class="section-header-desc">
+        <div class="header-filter">
           Contributing strategic analysis on critical infrastructure protection, supply chain integrity, and digital sovereignty across the African continent.
-        </p>
+        </div>
       </div>
 
-      <div class="thought-card">
-        <div class="thought-info">
-          <div class="thought-meta">LATEST PUBLICATION &bull; CRITICAL INFRASTRUCTURE DEFENSE</div>
+      <div class="thought-banner-card">
+        <div class="thought-content">
+          <div class="thought-tag">LATEST PUBLICATION &bull; CRITICAL INFRASTRUCTURE DEFENSE</div>
           <h3 class="thought-title">Beyond the Lens: Are We Auditing the Supply Chain of Surveillance Drones in Africa?</h3>
-          <p class="thought-desc">
+          <p class="thought-p">
             As autonomous UAV surveillance expands across Africa for border security and power grid inspection, an urgent question arises: <em>When we procure foreign-manufactured drones, who else is watching the feed?</em> This article examines covert telemetry loops, firmware backdoors, and why African regulators must mandate sovereign pre-deployment hardware testing.
           </p>
-          <a href="https://www.linkedin.com/in/richard-kwame-appiah-4b83a6112/" target="_blank" class="btn-pill btn-primary">
-            <span>Read on LinkedIn</span>
+          <a href="https://www.linkedin.com/in/richard-kwame-appiah-4b83a6112/" target="_blank" class="button button-mb-brown btn-arrow">
+            <div>Read on LinkedIn</div>
             <div class="icon-arrow">
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="none">
-                <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2.33301 8H13.553" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+                <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2.33301 8H13.553" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
           </a>
         </div>
-        <div class="thought-img">
-          <img src="drone_cyber_security.jpg" alt="Drone Cybersecurity & Supply Chain Audit in Africa">
+        <div class="thought-visual">
+          <img src="drone_cyber_security.jpg" alt="Drone Cyber Security & Supply Chain Audit">
         </div>
       </div>
     </div>
   </section>
 
   <!-- Certifications Grid -->
-  <section class="section-certs" id="credentials">
+  <section id="credentials" class="section_certs">
     <div class="container">
-      <div class="section-header-split">
-        <div>
-          <span class="tag-badge mono" style="margin-bottom: 12px;">ACCREDITATIONS & FRAMEWORKS</span>
-          <h2 class="section-h2">Certifications & Defense Credentials</h2>
+      <div class="growing-header">
+        <div class="header-left">
+          <h2>Certifications & <br/><span class="span-gradient">Defense Credentials</span></h2>
         </div>
-        <p class="section-header-desc">
+        <div class="header-filter">
           Internationally recognized credentials spanning ISO governance, U.S. defense risk frameworks, SOC operations, digital forensics, and cloud architecture.
-        </p>
+        </div>
       </div>
 
-      <div class="cert-grid">
-        <div class="cert-box">
+      <div class="certs-grid">
+        <div class="cert-item-card">
           <div class="cert-issuer">TÜV SÜD</div>
           <div class="cert-name">ISO/IEC 27001:2022 Certified Lead Implementer</div>
         </div>
-        <div class="cert-box">
+        <div class="cert-item-card">
           <div class="cert-issuer">MASTERMIND ASSURANCE</div>
           <div class="cert-name">ISO/IEC 27001:2022 Certified Auditor</div>
         </div>
-        <div class="cert-box">
+        <div class="cert-item-card">
           <div class="cert-issuer">U.S. DOD DCSA</div>
           <div class="cert-name">Risk Management Framework (RMF) Practitioner</div>
         </div>
-        <div class="cert-box">
+        <div class="cert-item-card">
           <div class="cert-issuer">U.S. DEPT OF HOMELAND SECURITY</div>
           <div class="cert-name">Critical Infrastructure Protection (CIP)</div>
         </div>
-        <div class="cert-box">
+        <div class="cert-item-card">
           <div class="cert-issuer">EC-COUNCIL</div>
           <div class="cert-name">Certified SOC Analyst (CSA)</div>
         </div>
-        <div class="cert-box">
+        <div class="cert-item-card">
           <div class="cert-issuer">LOGRHYTHM (EXABEAM)</div>
           <div class="cert-name">Platform Administrator & Security Analyst</div>
         </div>
-        <div class="cert-box">
+        <div class="cert-item-card">
           <div class="cert-issuer">TCM SECURITY</div>
           <div class="cert-name">Practical Windows Forensics & Ethical Hacking</div>
         </div>
-        <div class="cert-box">
+        <div class="cert-item-card">
           <div class="cert-issuer">ORACLE UNIVERSITY</div>
           <div class="cert-name">Oracle Cloud Infrastructure (OCI) Architect Associate</div>
         </div>
-        <div class="cert-box">
+        <div class="cert-item-card">
           <div class="cert-issuer">ONETRUST</div>
           <div class="cert-name">Incident Management Expert</div>
         </div>
-        <div class="cert-box">
+        <div class="cert-item-card">
           <div class="cert-issuer">THE SECOPS GROUP</div>
           <div class="cert-name">Certified Network Security Practitioner (CNSP)</div>
         </div>
-        <div class="cert-box">
+        <div class="cert-item-card">
           <div class="cert-issuer">PROCESS MANAGEMENT INTL</div>
           <div class="cert-name">Lean Six Sigma White Belt Certified</div>
         </div>
-        <div class="cert-box">
+        <div class="cert-item-card">
           <div class="cert-issuer">CISCO ACADEMY</div>
           <div class="cert-name">Network Defense Certified</div>
         </div>
@@ -1408,48 +1642,78 @@
     </div>
   </section>
 
-  <!-- Executive Footer (Siwa Capital Style) -->
-  <footer id="contact">
+  <!-- CTA Section (Exact Siwa Capital .section_cta) -->
+  <section class="section_cta">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
+      <div class="cta_wrap">
+        <h2>Let's Connect</h2>
+        <p>
+          Available for technical IT audits, executive advisory engagements, ISO 27001 implementations, and leadership roles across Africa and globally.
+        </p>
+        <div class="cta-actions">
+          <a href="mailto:Richard.k.appiah.ca@gmail.com" class="button button-mb-sand btn-arrow">
+            <div>Email Directly</div>
+            <div class="icon-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+                <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2.33301 8H13.553" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/richard-kwame-appiah-4b83a6112/" target="_blank" class="button is-glass btn-arrow">
+            <div>LinkedIn Profile</div>
+            <div class="icon-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+                <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2.33301 8H13.553" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Exact Siwa Capital .footer with Rounded Top Corners) -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="footer_grid">
+        <div class="footer_brand">
           <h3>RICHARD KWAME APPIAH</h3>
           <p>
-            Lead Technology / IT Auditor, Cybersecurity Governance Specialist, and Founder of Globitech Cyber Solutions. Available for high-stakes technical audits, regulatory implementations, and advisory roles.
+            Lead Technology / IT Auditor, Cybersecurity Governance Specialist, and Founder of Globitech Cyber Solutions. Providing high-stakes technical defense and executive regulatory compliance.
           </p>
-          <div class="footer-contact-actions">
-            <a href="mailto:Richard.k.appiah.ca@gmail.com" class="btn-pill btn-primary">
-              <span>Email Directly</span>
+          <div class="footer-btn-row">
+            <a href="mailto:Richard.k.appiah.ca@gmail.com" class="button button-mb-sand btn-arrow">
+              <div>Email Directly</div>
               <div class="icon-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="none">
-                  <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M2.33301 8H13.553" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+                  <path d="M9.62012 3.95361L13.6668 8.00028L9.62012 12.0469" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2.33301 8H13.553" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
             </a>
-            <a href="tel:+233508997295" class="btn-pill btn-glass">
-              <span>+233 50 899 7295</span>
-            </a>
-            <a href="https://www.linkedin.com/in/richard-kwame-appiah-4b83a6112/" target="_blank" class="btn-pill btn-glass">
-              <span>LinkedIn Profile ↗</span>
+            <a href="tel:+233508997295" class="button is-glass">
+              <div>+233 50 899 7295</div>
             </a>
           </div>
         </div>
 
-        <div class="footer-links-col">
-          <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #ffffff; margin-bottom: 8px;">NAVIGATE</div>
-          <a href="#pillars" class="footer-link-item">Strategic Pillars</a>
-          <a href="#ventures" class="footer-link-item">Commercial Ventures</a>
-          <a href="#case-studies" class="footer-link-item">Audit Case Studies</a>
-          <a href="#thought-leadership" class="footer-link-item">Thought Leadership</a>
-          <a href="#credentials" class="footer-link-item">Accreditations</a>
-          <a href="resume.html" target="_blank" class="footer-link-item" style="color: var(--primary);">Printable Resume ↗</a>
+        <div class="footer_links-col">
+          <div class="footer-nav-heading">NAVIGATION</div>
+          <a href="#about" class="footer-link">About Leadership</a>
+          <a href="#pillars" class="footer-link">Strategic Pillars</a>
+          <a href="#ventures" class="footer-link">Commercial Ventures</a>
+          <a href="#case-studies" class="footer-link">Audit Case Studies</a>
+          <a href="#research" class="footer-link">Research & Publications</a>
+          <a href="#credentials" class="footer-link">Accreditations</a>
+          <a href="resume.html" target="_blank" class="footer-link" style="color: var(--sand-light);">&rarr; Printable Resume</a>
         </div>
       </div>
 
-      <div class="footer-bottom">
+      <div class="footer_bottom">
         <div>&copy; 2026 RICHARD KWAME APPIAH. All rights reserved. Takoradi & Accra, Ghana.</div>
-        <div class="mono" style="font-size: 0.78rem; color: var(--text-dim);">DESIGNED WITH INSTITUTIONAL EXECUTIVE ARCHITECTURE</div>
+        <div class="mono" style="font-size: 0.78rem;">EXECUTIVE GOVERNANCE & VENTURE ARCHITECTURE</div>
       </div>
     </div>
   </footer>
